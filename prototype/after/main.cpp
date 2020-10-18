@@ -66,8 +66,7 @@ int main() {
         std::cin >> choice;
         if (choice == 0)
             break;
-        cars.emplace_back(
-            PrototypeFactory::makeCar(choice));
+        cars.emplace_back(PrototypeFactory::makeCar(choice));
     }
 
     for (int i = 0; i < cars.size(); ++i) {
