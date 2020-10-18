@@ -5,9 +5,7 @@
 class ICar {
 public:
     virtual std::unique_ptr<ICar> clone() = 0;
-    virtual void body() = 0;
-protected:
-    virtual void chassis() = 0;
+    virtual void make() = 0;
 };
 
 class PrototypeFactory {
@@ -21,33 +19,27 @@ class Citroen : public ICar {
 public:
     std::unique_ptr<ICar> clone() override { 
         return std::make_unique<Citroen>(*this); }
-    void body() override {
+    void make() override {
         std::cout << "You've made one Citroen car\n";
     }
-protected:
-    void chassis() override {}
 };
 
 class Opel : public ICar {
 public:
     std::unique_ptr<ICar> clone() override { 
         return std::make_unique<Opel>(*this); }
-    void body() override {
+    void make() override {
         std::cout << "You've made one Opel car\n";
     }
-protected:
-    void chassis() override {}
 };
 
 class Peugeot : public ICar {
 public:
     std::unique_ptr<ICar> clone() override { 
         return std::make_unique<Peugeot>(*this); }
-    void body() override {
+    void make() override {
         std::cout << "You've made one Peugeot car\n";
     }
-protected:
-    void chassis() override {}
 };
 
 std::unique_ptr<ICar> PrototypeFactory::s_prototypes[] = {
@@ -71,7 +63,7 @@ int main() {
     }
 
     for (int i = 0; i < cars.size(); ++i) {
-        cars[i]->body();
+        cars[i]->make();
     }
     
     return 0;

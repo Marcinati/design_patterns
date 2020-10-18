@@ -4,36 +4,28 @@
 
 class ICar {
 public:
-    virtual void body() = 0;
-protected:
-    virtual void chassis() = 0;
+    virtual void make() = 0;
 };
 
 class Citroen : public ICar {
 public:
-    void body() override {
+    void make() override {
         std::cout << "You've made one Citroen car\n";
     }
-protected:
-    void chassis() override {}
 };
 
 class Opel : public ICar {
 public:
-    void body() override {
+    void make() override {
         std::cout << "You've made one Opel car\n";
     }
-protected:
-    void chassis() override {}
 };
 
 class Peugeot : public ICar {
 public:
-    void body() override {
+    void make() override {
         std::cout << "You've made one Peugeot car\n";
     }
-protected:
-    void chassis() override {}
 };
 
 int main() {
@@ -55,7 +47,7 @@ int main() {
     }
 
     for (int i = 0; i < cars.size(); i++) {
-        cars[i]->body();
+        cars[i]->make();
     }
 
     return 0;
