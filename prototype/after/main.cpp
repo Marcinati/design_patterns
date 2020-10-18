@@ -64,8 +64,9 @@ int main() {
     while (true) {
         std::cout << "Citroen(1) Opel(2) Peugeot(3) Results(0): ";
         std::cin >> choice;
-        if (choice == 0)
+        if (choice == 0) {
             break;
+        }
         cars.emplace_back(PrototypeFactory::makeCar(choice));
     }
 
