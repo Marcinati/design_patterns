@@ -1,5 +1,5 @@
 # design_patterns in modern C++
 
-based on
-    * refactoring.guru
-    * sourcemaking.com
+## based on
+* refactoring.guru
+* sourcemaking.com
